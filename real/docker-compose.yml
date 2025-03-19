@@ -1,0 +1,14 @@
+version: '3'
+services:
+  redis:
+    image: redis:latest  # 최신 Redis 이미지 사용
+    container_name: redis-container  # 컨테이너 이름 지정
+    ports:
+      - "6379:6379"  # Redis 기본 포트 6379를 외부로 노출
+    networks:
+      - redis-network  # 네트워크 연결
+
+networks:
+  redis-network:
+    driver: bridge  # 브리지 네트워크 사용
+
